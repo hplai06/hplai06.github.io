@@ -365,17 +365,17 @@ function deathOfPlayer() {
     canvas.width / 2,
     canvas.height / 2
   );
-  ctx.fillStyle = "black";
-  ctx.font = "800% serif";
+  ctx.fillStyle = "red";
+  ctx.font = "500% serif";
   ctx.fillText(
-    "You are dead",
+    "You've been bombed",
     canvas.width / 4,
     canvas.height / 6 + canvas.height / 5,
     (canvas.width / 16) * 14
   );
-  ctx.font = "500% serif";
+  ctx.font = "400% serif";
   ctx.fillText(
-    "Hit any key to restart",
+    "Press any key for more aids",
     canvas.width / 4,
     canvas.height / 6 + canvas.height / 3,
     (canvas.width / 16) * 14
@@ -676,16 +676,16 @@ function keyboardControlActions() {
 
 function handleKeyDown(e) {
   keyPress.any = true;
-  if (e.key === "ArrowUp" || e.key === "w") {
+  if (e.key === "ArrowDown" || e.key === "s") {
     keyPress.up = true;
   }
-  if (e.key === "ArrowLeft" || e.key === "a") {
+  if (e.key === "ArrowRight" || e.key === "d") {
     keyPress.left = true;
   }
-  if (e.key === "ArrowDown" || e.key === "s") {
+  if (e.key === "ArrowUp" || e.key === "w") {
     keyPress.down = true;
   }
-  if (e.key === "ArrowRight" || e.key === "d") {
+  if (e.key === "ArrowLeft" || e.key === "a") {
     keyPress.right = true;
   }
   if (e.key === " ") {
@@ -694,20 +694,20 @@ function handleKeyDown(e) {
 }
 
 function handleKeyUp(e) {
-  if (e.key === "ArrowUp" || e.key === "w") {
+  if (e.key === "ArrowDown" || e.key === "s") {
     keyPress.up = false;
   }
-  if (e.key === "ArrowLeft" || e.key === "a") {
+  if (e.key === "ArrowRight" || e.key === "d") {
     keyPress.left = false;
   }
-  if (e.key === "ArrowDown" || e.key === "s") {
+  if (e.key === "ArrowUp" || e.key === "w") {
     keyPress.down = false;
     if (currentAnimationType === animationTypes.duck) {
       duckTimer = 8;
       frameIndex = 20;
     }
   }
-  if (e.key === "ArrowRight" || e.key === "d") {
+  if (e.key === "ArrowLeft" || e.key === "a") {
     keyPress.right = false;
   }
   if (e.key === " ") {
